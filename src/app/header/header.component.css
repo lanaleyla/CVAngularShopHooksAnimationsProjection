@@ -1,0 +1,17 @@
+.backDesing {
+    display: flex;
+    background-color: #f07753;
+    height: 280px;
+    width: 100%;
+    font-size: 50px;
+    color: #fff;
+    font-family: fantasy;
+    text-align: right;
+    align-items: center;
+}
+
+.headerImage {
+    padding-left: 100px;
+    width: 33%;
+    height: 280px;
+}

@@ -1,0 +1,8 @@
+<div class="categories">
+   <ul class="categoriesList">
+      <li  class="category" *ngFor="let category of categoriesArray">
+        <input [name]="category.Id" [value]="category.Title" type="button" class="categoryBtn" (click)="alartProducts($event.target)">
+      </li>
+    </ul>
+</div>
+
