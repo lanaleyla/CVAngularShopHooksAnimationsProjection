@@ -1,3 +1,7 @@
+p {
+    margin: 0px !important;
+}
+
 .productImg {
     width: 250px;
     height: 210px;
@@ -21,8 +25,4 @@
     flex-flow: column;
     border: 1 solid;
     box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
-}
-
-p {
-    margin: 0px !important;
 }

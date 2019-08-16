@@ -1,24 +1,19 @@
-<div *ngIf="menuClicked">
-    <app-side-bar (clickHideOnEvent)="updateMenu($event)" (clickCloseMenuEvent)="updateMenu($event)"
-        (clickedEvent)="updateMessage($event)"></app-side-bar>
+<div *ngIf='menuClicked'>
+    <app-side-bar (clickHideOnEvent)='updateMenu($event)' (clickCloseMenuEvent)='updateMenu($event)'
+        (clickedEvent)='updateMessage($event)'></app-side-bar>
 </div>
-
+<div [@open]='status'>
 <app-header (clickOnMenuEvent)=updateMenu($event)></app-header>
 
-<div class="textDesign" *ngIf="message=='home'">Welcome, please take your time and choose from our varaity of
+<div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='home'">Welcome, please take your time and choose from our varaity of
     georgian foods!</div>
 
-<div class="textDesign" *ngIf="message=='about'">About us, We offer georgian food shopping services</div>
+<div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='about'">About us, We offer georgian food shopping services</div>
 
-<div class="categoriesAndProducts" *ngIf="message=='products' && !pressedProduct">
-    <app-categories-list (clickedCategoryEvent)="updateCategoryName($event)"></app-categories-list>
-    <div>
-        <app-product-list (productPressedEvent)="updateProductView($event)" [category]="categoryName">good it works
-        </app-product-list>
-    </div>
+<div [@myState]='OptionStatus' *ngIf="message=='products'">
+    <app-categories-list></app-categories-list>
 </div>
 
-<app-product-details (clickOnBackEvent)="updateProductView($event)" *ngIf="pressedProduct" [product]="pressedProduct">
-</app-product-details>
+<div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='contact'">Please contact us via Email: lanali999@gmail.com,Thank you!</div>
 
-<div class="textDesign" *ngIf="message=='contact'">Please contact us via Email: lanali999@gmail.com,Thank you!</div>
+</div>

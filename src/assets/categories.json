@@ -1,20 +1,20 @@
 {
     "categories": [
         {
-            "Id": "A",
-            "Title": "All"
+            "id": "A",
+            "title": "All"
         },
         {
-            "Id": "B",
-            "Title": "Cheese"
+            "id": "B",
+            "title": "Cheese"
         },
         {
-            "Id": "C",
-            "Title": "Meat"
+            "id": "C",
+            "title": "Meat"
         },
         {
-            "Id": "D",
-            "Title": "Salads"
+            "id": "D",
+            "title": "Salads"
         }
     ]
 }

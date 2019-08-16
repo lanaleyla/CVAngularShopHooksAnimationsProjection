@@ -1,38 +1,58 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('myState', [
+      state('active', style({ transform: 'translateX(0)' })),
+      transition('void => true', [
+        style({ transform: 'translateX(-100%)' }),
+        animate(1000)
+      ]),
+    ]),
+    trigger('open', [
+      state('active', style({
+        position: 'absolute',
+        left: '0',
+        top: '0',
+        width: '100%',
+        height: '100%',
+        background: '#e6e6e6',
+        opacity: '0.6',
+      })),
+    ]),
+  ]
 })
 
-export class AppComponent implements OnChanges {
+export class AppComponent {
 
   title = 'shop';
   message = 'home';        //the option the user chose from the sidebar menu
-  categoryName = 'A';      //the category that the user has chosen
-  menuClicked = false;      //if user clicked on menu icon in the top bar
-  productDetails = true;   //user pressed on a product, show/hide product details
-  @Input() pressedProduct; //the product the user pressed on
+  menuClicked = false;     //if user clicked on menu icon in the top bar
+  optionClicked = false;   //option within the menu was clicked
 
   updateMenu(e) { //update visability of side bar menu
     this.menuClicked = e;
-    console.log(this.menuClicked);
+    if (this.menuClicked) {
+      this.optionClicked = false;
+    }
   }
-  updateProductView(e) {//update product details view
-    this.pressedProduct = e;
-  }
+
   updateMessage(e) {//update the option the user has chosen
-    if (e !== "")
+    if (e !== this.message) {
       this.message = e;
+      this.optionClicked = true;
+    }
   }
 
-  updateCategoryName(e) { //update the category of products that the user has chosen
-    this.categoryName = e;
+  get status(): string { //status if side bar has opened
+    return this.menuClicked ? 'active' : 'inactive';
   }
 
-  ngOnChanges() {
-    console.log(this.categoryName);
+  get OptionStatus() { //status if user clicked on option from side bar
+    return this.optionClicked ? 'true' : 'false';
   }
-
 }

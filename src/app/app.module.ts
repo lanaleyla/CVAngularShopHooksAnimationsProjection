@@ -11,6 +11,7 @@ import { ProductComponent } from './product/product.component';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
 import { SocialLinksComponent } from './social-links/social-links.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

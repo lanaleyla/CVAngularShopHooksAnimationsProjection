@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Product } from 'src/model/index';
 
 @Component({
   selector: 'app-product-details',
@@ -6,21 +7,14 @@ import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angu
   styleUrls: ['./product-details.component.css']
 })
 
-export class ProductDetailsComponent implements OnInit, OnChanges {
+export class ProductDetailsComponent {
 
-  @Input() product; //chosen product that was passed from the app-component
+  @Input() product: Product; //chosen product that was passed from the list of products
   @Output() clickOnBackEvent = new EventEmitter();
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  ngOnChanges() {
-    console.log(this.product);
-  }
-
-  BackToProductView() { //when pressing back initialize the product to null
+  backToProductView() { //when pressing back initialize the product to null
     this.clickOnBackEvent.emit(null);
   }
 

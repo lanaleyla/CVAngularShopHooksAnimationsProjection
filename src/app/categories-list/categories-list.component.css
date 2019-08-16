@@ -1,27 +1,33 @@
-.categories{
+.categories {
     display: flex;
     width: 300px;
-    height: 100%;
     background-color: #211d57;
     color: #fff;
     font-size: 18px;
 }
-.categoriesList{
+
+.categoriesList {
     list-style: none;
     padding: 20px;
-   
 }
 
-.category{
-    margin: 10px;
-    font-size:25px;
+.categoriesAndProducts {
+    display: flex;
+    flex-flow: row;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*fix that shadow*/
 }
-.category:hover{
+
+.category {
+    margin: 10px;
+    font-size: 25px;
+}
+
+.category:hover {
     box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
 }
 
-.categoryBtn
-{
+.categoryBtn {
     outline: none;
     border: none;
     background-color: transparent;

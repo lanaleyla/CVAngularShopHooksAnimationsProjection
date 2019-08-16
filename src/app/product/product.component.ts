@@ -1,29 +1,23 @@
-import { Component, OnInit, Input, Output, OnChanges, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Product } from 'src/model/index';
+
 
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductComponent implements OnInit, OnChanges {
+export class ProductComponent {
 
   constructor() { }
 
-  @Input() product; //chosen product on press
-  @Input() showData = false; //show/hide product 
+  @Input() product: Product;  //chosen product on press
+  @Input() showData = false;  //show/hide product 
   @Output() clickOnProductEvent = new EventEmitter();
-
-  ngOnInit() {
-  }
 
   showDetails()//send the chosen product to product-list
   {
-    this.clickOnProductEvent.emit(this.product); //send the product to product list->app
+    this.clickOnProductEvent.emit(this.product); //send the chosen product to product list
   }
-
-  ngOnChanges() {
-    console.log(this.showData);
-  }
-
 
 }

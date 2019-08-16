@@ -1,5 +1,17 @@
-<div class="topBar">
-    <img class="menuIcon" (click)="openSidebar()"
-        src="https://icon-library.net/images/white-menu-icon-png/white-menu-icon-png-18.jpg">
-    <app-social-links></app-social-links>
+<div class='topBar'>
+    <img class='menuIcon' (click)='openSidebar()'
+        src='https://icon-library.net/images/white-menu-icon-png/white-menu-icon-png-18.jpg'>
+    <app-social-links>
+        <a #ref href='https://he-il.facebook.com/'>
+            <img class='menuIcon' src='https://www.arnavutkoy.bel.tr/Files/images/iletisim%20icon/facebook.png'
+                alt='facebookIcon' /></a>
+        <a #ref href='https://mail.google.com'>
+            <img class='menuIcon' src='https://icon-library.net/images/icon-mail/icon-mail-22.jpg' alt='emailIcon' />
+        </a>
+
+        <a #ref href='https://twitter.com/home?lang=he'>
+            <img class='menuIcon' src='https://cdn1.iconfinder.com/data/icons/logotypes/32/square-twitter-512.png'
+                alt='twitterIcon' />
+        </a>
+    </app-social-links>
 </div>
