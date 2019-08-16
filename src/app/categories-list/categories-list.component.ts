@@ -32,9 +32,9 @@ export class CategoriesListComponent implements OnInit {
   }
 
   //load products to show products array by a given category id
-  loadProducts(categoryId) 
-  {
+  loadProducts(categoryId) {
     this.cleanChangingArray(this.showProducts);
+
     if (categoryId === 'A') { //special case if user choose to see all products
       for (let product of this.productsArray) {
         this.showProducts.push(product);
@@ -58,7 +58,7 @@ export class CategoriesListComponent implements OnInit {
   }
 
   cleanChangingArray(array) { //clean the changing array
-    for (let product of array) {
+    while (array.length > 0) { //initialize the showProducts array on every choose
       array.pop();
     }
   }
