@@ -32,23 +32,20 @@ export class CategoriesListComponent implements OnInit {
   }
 
   //load products to show products array by a given category id
-  loadProducts(categoryId) {
+  loadProducts(categoryId) 
+  {
     this.cleanChangingArray(this.showProducts);
-
     if (categoryId === 'A') { //special case if user choose to see all products
       for (let product of this.productsArray) {
         this.showProducts.push(product);
       }
     }
     else { //show products by a given category
-      for (let product of this.productsArray) {
-        if (product.categoryId === categoryId) {
-          this.showProducts.push(product);
-        }
-      }
+      this.showProducts = this.productsArray.filter(product => product.categoryId === categoryId);
     }
     this.categoryId = ''; //initialize category name for the next time
   }
+
 
   initializeProductsAll(products: Product[]) {  //initialize products view to all products
     for (let product of products) {
@@ -56,12 +53,12 @@ export class CategoriesListComponent implements OnInit {
     }
   }
 
-  updateProductView(e:Product) {//update product details view
+  updateProductView(e: Product) {//update product details view
     this.pressedProduct = e;
   }
 
   cleanChangingArray(array) { //clean the changing array
-    while (array.length > 0) { //initialize the showProducts array on every choose
+    for (let product of array) {
       array.pop();
     }
   }
